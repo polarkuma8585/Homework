@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="homework.css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+    <title>setquestion.html</title>
+</head>
+<body>
+    <div style="position:relative; width:1200px; height:867px; margin:0 auto; font-family: 'Nanum Gothic', sans-serif;">
+        <div style="position:absolute; top:55px; left:76px; width:300px; height:36px; font-weight:bold; font-size: 25px;">
+            문제 등록
+        </div>
+        <table cellpadding="5px" style="position: absolute; top: 115px; left: 76px; width:1000px; height:100px; ">
+            <tr>
+                <td width="60">종목</td>
+                <td>
+                    <select style="border-radius: 5px; height: 40px; width: 170px; border:1px #cccccc solid">
+                            <option value="DB">데이터베이스</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">문제</td>
+                <td>
+                    <textarea rows="3" cols="100" style="width:825px; resize: none; border-radius: 5px; padding: 15px; border:1px #cccccc solid"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>보기1</td>
+                <td>
+                    <input type="text" placeholder="신입사원 레벨 테스트" style="border-radius: 5px; height:50px; width:840px; padding:0 0 0 15px; border:1px #cccccc solid">
+                </td>
+            </tr>
+            <tr>
+                <td>보기2</td>
+                <td>
+                    <input type="text" placeholder="신입사원 레벨 테스트" style="border-radius: 5px; height:50px; width:840px; padding:0 0 0 15px; border:1px #cccccc solid">
+                </td>
+            </tr>
+            <tr>
+                <td>보기3</td>
+                <td>
+                    <input type="text" placeholder="신입사원 레벨 테스트" style="border-radius: 5px; height:50px; width:840px; padding:0 0 0 15px; border:1px #cccccc solid">
+                </td>
+            </tr>
+            <tr>
+                <td>보기4</td>
+                <td>
+                    <input type="text" placeholder="신입사원 레벨 테스트" style="border-radius: 5px; height:50px; width:840px; padding:0 0 0 15px; border:1px #cccccc solid">                    
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">해설</td>
+                <td >
+                    <textarea placeholder="신입사원 레벨 테스트" style="border-radius: 5px; height:50px; width:840px; padding:15px 0 0 15px; border:1px #cccccc solid; vertical-align: middle; resize:none;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>정답</td>
+                <td>
+                    <input id="chk1" type="checkbox" checked="checked">
+                    <label for="chk1"><span></span>1</label>&nbsp;&nbsp;
+                    <input id="chk2" type="checkbox" checked="checked">
+                    <label for="chk2"><span></span>2</label>&nbsp;&nbsp;
+                    <input id="chk3" type="checkbox" checked="checked">
+                    <label for="chk3"><span></span>3</label>&nbsp;&nbsp;
+                    <input id="chk4" type="checkbox" checked="checked">
+                    <label for="chk4"><span></span>4</label>
+                </td>
+            </tr>
+        </table>
+        <div style="position:absolute; top:700px; left:500px;">
+                <input type="button" value="등록" onclick="location.href='testlist.html'" id="regbtn">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="목록" onclick="location.href='testlist.html'" id="listbtn2">
+            </div>
+    </div>
+</body>
+</html>

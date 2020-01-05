@@ -1,0 +1,261 @@
+#log{
+    width:130px; 
+    height:35px; 
+    border-radius: 30px; 
+    padding:15px 0 0 0; 
+    color:white; 
+    background-color: #5ed728;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#log:hover{
+    font-size: 20px;
+    transition: .5s;
+    cursor: default;
+}
+#btn{
+    position:absolute; 
+    top: 340px; 
+    left: 360px; 
+    height:50px; 
+    width:470px; 
+    border-radius: 5px; 
+    border-style: none; 
+    color:white; 
+    background-color:#4dc3ff ; 
+    font-size:20px; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#btn:hover{ 
+    background-color:#93a3ff ; 
+    opacity: 0.7;
+    cursor:pointer;    
+}
+
+#listbtn{
+    border-radius: 5px; 
+    border-style: none; 
+    background-color: #4dc3ff; 
+    width:140px; height:40px; 
+    color:white; 
+    font-size:16px; 
+    cursor:pointer;
+    padding:0 0 5px 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#listbtn:hover{
+    background-color: #0faeff; 
+    font-size:18px;
+    cursor:pointer;
+    transition: .5s ease;
+}
+
+#resetbtn {
+    border-radius: 5px; 
+    border-style: none; 
+    background-color: #ffcc00; 
+    width:100px; 
+    height:40px; 
+    padding:0 0 5px 0;
+    color:white; 
+    font-size:18px; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#resetbtn:hover{
+    color: #7e5400;
+    background-color: #ebaf0d;
+    transition: .5s;
+}
+#searchbtn{
+    border-radius: 5px; 
+    border-style: none; 
+    background-color: #4dc3ff; 
+    width:100px; 
+    height:40px; 
+    color:white; 
+    font-size:18px; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    
+}
+#searchbtn:hover{
+    color: #00377e;
+    background-color: #0faeff;
+    transition: .5s;
+}
+#page{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#page li {
+    float: left;
+    background-color:#e7e7e7;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    vertical-align: middle;
+    text-align: center;
+    -position: relative;
+    cursor: pointer;
+    font-family: 'Hanna', sans-serif;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#page li:hover{
+    background-color: #4dc3ff;
+    transition: .5s;
+}
+#testbtn {
+    height:30px; 
+    width:80px; 
+    border-radius: 5px; 
+    border-style: none; 
+    background-color:#4d4d4d; 
+    color:white; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#testbtn:hover{
+    background-color: #242424;
+    height:40px;
+    width: 90px;
+    transition: .5s;
+}
+#result {
+    height:30px; 
+    width:80px; 
+    border-radius: 5px; 
+    border-style: none; 
+    background-color:#4dc3ff; 
+    color:white; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#result:hover{
+    background-color: #11aefd;
+    height: 40px;
+    width: 90px;
+    transition: .5s;
+}
+#apply {
+    border-radius: 5px; 
+    width: 810px; 
+    height:50px; 
+    border-style: none; 
+    background-color: #4dc3ff; 
+    color:white; 
+    font-size:18px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#apply:hover{
+    background-color: #009fee;
+    transition: .5s;
+    font-size: 20px;
+}
+#rttbtn{
+    width:170px; 
+    height:45px; 
+    border-radius: 5px; 
+    background-color: #4dc3ff; 
+    border-style: none; 
+    color: white; 
+    font-size:15px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#rttbtn:hover {
+    background-color: #009fee;
+    transition: .5s;
+    font-size: 18px;
+}
+#regbtn{
+    width:70px; 
+    height:45px; 
+    border-radius: 5px; 
+    background-color: #4dc3ff; 
+    border-style: none; 
+    color: white; 
+    font-size:15px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#regbtn:hover{
+    color: #00377e;
+    background:#009fee;
+    transition: .5s;
+}
+#listbtn2{
+    width:70px; 
+    height:45px; 
+    border-radius: 5px; 
+    background-color: #ffcc00; 
+    border-style: none; 
+    color: white; 
+    font-size: 15px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#listbtn2:hover{
+    color: #7e5400;
+    background-color: #ebaf0d;
+    transition: .5s;
+}
+#txt{
+    resize: none; 
+    overflow-y: hidden;
+    border-radius: 5px; 
+    padding: 15px; 
+    border:1px #cccccc solid; 
+    vertical-align: middle; 
+    height:30px; 
+    width:645px; 
+    color:#757575;
+}
+#tb1 tr{
+    cursor: pointer;
+}
+/*input[type="checkbox"] {
+    margin-top: 10px;
+}*/
+
+input[type="checkbox"] {
+    display:none;
+    
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 5px 5px 5px 0;
+    vertical-align:middle;
+    /* radio type checkbox */
+    background: url(icons8-circle-16.png) no-repeat 0 0;
+    /* checkbox type */
+    /*background: url(checkbox_unchecked_42186.png) no-repeat 0 0;*/
+    line-height: 16px;
+    cursor:pointer;
+    
+}
+input[type="checkbox"]:checked + label span {
+    /* radio type checkbox */
+    background:url(icons8-checked-radio-button-116.png) no-repeat 0 0;
+    /* checkbox type */
+    /*background:url(checkbox_checked_42185.png) no-repeat 0 0;*/
+    vertical-align:middle;
+    line-height: 16px;
+    cursor: pointer;
+}
