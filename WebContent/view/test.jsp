@@ -22,6 +22,7 @@
         }  
     }  
 }  
+
 	var SetTime = 3600;		// 최초 설정 시간(기본 : 초)
 
 	function msg_time() {	// 1초씩 카운트
