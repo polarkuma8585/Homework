@@ -10,19 +10,33 @@
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
     <title>test.jsp</title>
 <script type="text/javascript">
-	function check_all(check){  
-    	bCheck = check.checked;  
-    	gName = check.value;  
-    	obj = frm.chk1;  
-    	objId = '';  
-    for(i = 0; i < obj.length; i++){  
-        objId = obj[i].id;  
-        if(objId.match(gName)){  
-            obj[i].checked = bCheck;  
-        }  
-    }  
+	
+	function check_right(check){  
+     for(i=0; i < 4; i++){
+    	
+    	 chk = document.getElementsByName(check)[i].checked;
+    	 
+    	 if(chk == true){
+    		 document.getElementsByName(check + "1")[i].checked = true;
+    	 }else{
+    		 document.getElementsByName(check + "1")[i].checked = false;    
+    	 }    		 
+     }  
 }  
-
+  
+	function check_left(check){  
+	     for(i=0; i < 4; i++){
+	    	
+	    	 chk = document.getElementsByName(check)[i].checked;
+	    	 
+	    	 if(chk == true){
+	    		 chk_l = check.substr(0,4);	    		 
+	    		 document.getElementsByName(chk_l)[i].checked = true;
+	    	 }else{
+	    		 document.getElementsByName(chk_l)[i].checked = false;
+	    	 }    		 
+	     }  
+	}  
 	var SetTime = 3600;		// 최초 설정 시간(기본 : 초)
 
 	function msg_time() {	// 1초씩 카운트
@@ -33,11 +47,16 @@
 		if (SetTime < 0) {			// 시간이 종료 되었으면..
 			clearInterval(tid);		// 타이머 해제
 			alert("시험 시간이 종료되었습니다.");
-			
+			document.frm.submit();
 		}
-		submit;
+		
 	}
 	window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) };
+
+	function fnMove(seq){
+	        var offset = $("#td" + seq).offset();
+	        $('html, body').animate({scrollTop : offset.top}, 400);
+	    }
 </script>
 </head>
 <body>
@@ -73,91 +92,93 @@
             <div style="position:absolute; top: 260px; left: 76px; width:800px; height: 570px; background-color: #e7e7e7; padding:10px 5px 5px 5px">
             <table width="800px" cellpadding="10px">
                 <tr valign="top">
-                    <td width="650">1.하는 것이다 보라 청춘을! 그들의 몸이 얼마나 튼튼하며 그들의 피부가 얼마나 생생하며 그들의 눈에 무엇이 타오르고 있는가?
+                    <td width="650" id="td1">1.하는 것이다 보라 청춘을! 그들의 몸이 얼마나 튼튼하며 그들의 피부가 얼마나 생생하며 그들의 눈에 무엇이 타오르고 있는가?
                     				우리 눈이 그것을 보는 때에 우리의 귀는 생의 찬미를 듣는다 그것은 웅대한 고나현익이며 미묘한    
                     </td>
                 </tr>
                 <tr align="left">
                     <td>
-                        <input type="checkbox" value="1" id="chk1_1" name="chk1" value="1" onclick="check_all(frm.chk1)">
+                        <input type="checkbox" id="chk1_1" name="chk1" value="1" onclick="check_right('chk1')">
                         <label for="chk1_1"><span></span><font style="cursor:pointer">1</font></label><br>                   
-                        <input type="checkbox" value="1" id="chk1_2" name="chk1" value="2" onclick="check_all(frm.chk1)">
+                        <input type="checkbox" id="chk1_2" name="chk1" value="2" onclick="check_right('chk1')">
                         <label for="chk1_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                        <input type="checkbox" value="1" id="chk1_3" name="chk1" value="3" onclick="check_all(frm.chk1)">
+                        <input type="checkbox" id="chk1_3" name="chk1" value="3" onclick="check_right('chk1')">
                         <label for="chk1_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                        <input type="checkbox" value="1" id="chk1_4" name="chk1" value="4" onclick="check_all(frm.chk1)">
+                        <input type="checkbox" id="chk1_4" name="chk1" value="4" onclick="check_right('chk1')">
                         <label for="chk1_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="td2">
                         2.하는 것이다 보라 청춘을! 그들의 몸이 얼마나 튼튼하며 그들의 피부가 얼마나 생생하며 그들의 눈에 무엇이 타오르고 있는가?
                                                 우리 눈이 그것을 보는 때에 우리의 귀는 생의 찬미를 듣는다 그것은 웅대한 고나현익이며 미묘한
                     </td>
                 </tr>
                 <tr align="left">
                     <td>
-                            <input type="checkbox" value="1" id="chk2_1" checked="checked">
+                            <input type="checkbox" id="chk2_1" name="chk2" value="1" onclick="check_right('chk2')">
                             <label for="chk2_1"><span></span><font style="cursor:pointer">1</font></label><br>
-                            <input type="checkbox" value="1" id="chk2_2" checked="checked">
+                            <input type="checkbox" id="chk2_2" name="chk2" value="2" onclick="check_right('chk2')">
                             <label for="chk2_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                            <input type="checkbox" value="1" id="chk2_3" checked="checked">
+                            <input type="checkbox" id="chk2_3" name="chk2" value="3" onclick="check_right('chk2')">
                             <label for="chk2_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                            <input type="checkbox" value="1" id="chk2_4" checked="checked">
+                            <input type="checkbox" id="chk2_4" name="chk2" value="4" onclick="check_right('chk2')">
                             <label for="chk2_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="td3">
                     3.하는 것이다 보라 청춘을! 그들의 몸이 얼마나 튼튼하며 그들의 피부가 얼마나 생생하며 그들의 눈에 무엇이 타오르고 있는가?
                                         우리 눈이 그것을 보는 때에 우리의 귀는 생의 찬미를 듣는다 그것은 웅대한 고나현익이며 미묘한
                     </td>
                 </tr>
                 <tr align="left">
                     <td>
-                            <input type="checkbox" value="1" id="chk3_1" checked="checked">
+                            <input type="checkbox" value="1" id="chk3_1" name="chk3" onclick="check_right('chk3')">
                             <label for="chk3_1"><span></span><font style="cursor:pointer">1</font></label><br>
-                            <input type="checkbox" value="1" id="chk3_2" checked="checked">
+                            <input type="checkbox" value="2" id="chk3_2" name="chk3" onclick="check_right('chk3')">
                             <label for="chk3_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                            <input type="checkbox" value="1" id="chk3_3" checked="checked">
+                            <input type="checkbox" value="3" id="chk3_3" name="chk3" onclick="check_right('chk3')">
                             <label for="chk3_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                            <input type="checkbox" value="1" id="chk3_4" checked="checked">
+                            <input type="checkbox" value="4" id="chk3_4" name="chk3" onclick="check_right('chk3')">
                             <label for="chk3_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
-        </table>
-        
+                
+        </table>        
         </div>
         <div style="position:absolute; top:260px; left:900px; width:180px; height:420px; background-color:#e7e7e7;">
             <table width="180px" height="400px" cellpadding="5px" style="border-collapse: collapse;">
                 <tr>
                     <td style="vertical-align: top;">
-
-                    1. &nbsp;<input type="checkbox" value="1" id="chk_1_1" name="chk1" value="1" onclick="check_all(frm.chk1)">
+					<font onclick="" style="cursor:pointer">1.</font>
+                    		 &nbsp;<input type="checkbox" id="chk_1_1" name="chk11" value="1" onclick="check_left('chk11')">
                              <label for="chk_1_1"><span></span><font style="cursor:pointer">1</font></label>
-                             <input type="checkbox" value="1" id="chk_1_2" name="chk1" value="2" onclick="check_all(frm.chk1)">
+                             <input type="checkbox" id="chk_1_2" name="chk11" value="2" onclick="check_left('chk11')">
                              <label for="chk_1_2"><span></span><font style="cursor:pointer">2</font></label>
-                             <input type="checkbox" value="1" id="chk_1_3" name="chk1" value="3" onclick="check_all(frm.chk1)">
+                             <input type="checkbox" id="chk_1_3" name="chk11" value="3" onclick="check_left('chk11')">
                              <label for="chk_1_3"><span></span><font style="cursor:pointer">3</font></label>
-                             <input type="checkbox" value="1" id="chk_1_4" name="chk1" value="4" onclick="check_all(frm.chk1)">
+                             <input type="checkbox" id="chk_1_4" name="chk11" value="4" onclick="check_left('chk11')">
                              <label for="chk_1_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
-                   2. &nbsp;<input type="checkbox" value="1" id="chk_2_1" checked="checked">
+                   <font onclick="fnMove('2')" style="cursor:pointer">2.</font> 
+                   	  &nbsp;<input type="checkbox" id="chk_2_1" name="chk21" value="1" onclick="check_left('chk21')">
                             <label for="chk_2_1"><span></span><font style="cursor:pointer">1</font></label>
-                            <input type="checkbox" value="1" id="chk_2_2" checked="checked">
+                            <input type="checkbox" id="chk_2_2" name="chk21" value="2" onclick="check_left('chk21')">
                             <label for="chk_2_2"><span></span><font style="cursor:pointer">2</font></label>
-                            <input type="checkbox" value="1" id="chk_2_3" checked="checked">
+                            <input type="checkbox" id="chk_2_3" name="chk21" value="3" onclick="check_left('chk21')">
                             <label for="chk_2_3"><span></span><font style="cursor:pointer">3</font></label>
-                            <input type="checkbox" value="1" id="chk_2_4" checked="checked">
+                            <input type="checkbox" id="chk_2_4" name="chk21" value="4" onclick="check_left('chk21')">
                             <label for="chk_2_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
-                   3. &nbsp;<input type="checkbox" value="1" id="chk_3_1" checked="checked">
+                   <font onclick="fnMove('3')" style="cursor:pointer">3.</font>
+                   	  &nbsp;<input type="checkbox" value="1" id="chk_3_1" name="chk31" onclick="check_left('chk31')">
                             <label for="chk_3_1"><span></span><font style="cursor:pointer">1</font></label>
-                            <input type="checkbox" value="1" id="chk_3_2" checked="checked">
+                            <input type="checkbox" value="2" id="chk_3_2" name="chk31" onclick="check_left('chk31')">
                             <label for="chk_3_2"><span></span><font style="cursor:pointer">2</font></label>
-                            <input type="checkbox" value="1" id="chk_3_3" checked="checked">
+                            <input type="checkbox" value="3" id="chk_3_3" name="chk31" onclick="check_left('chk31')">
                             <label for="chk_3_3"><span></span><font style="cursor:pointer">3</font></label>
-                            <input type="checkbox" value="1" id="chk_3_4" checked="checked">
+                            <input type="checkbox" value="4" id="chk_3_4" name="chk31" onclick="check_left('chk31')">
                             <label for="chk_3_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
                    4. &nbsp;<input type="checkbox" value="1" id="chk_4_1" checked="checked">

@@ -54,8 +54,7 @@
     </script>
 </head>
 <body>
-	<div
-		style="position: relative; width: 1200px; height: 867px; margin: 0 auto; font-family: 'Nanum Gothic', sans-serif;">
+	<div style="position: relative; width: 1200px; height: 867px; margin: 0 auto; font-family: 'Nanum Gothic', sans-serif;">
 		<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return formCheck()">
 			<div style="position: absolute; top: 55px; left: 76px; width: 300px; height: 36px; font-weight: bold; font-size: 25px;">
 				시험지 등록
