@@ -1,3 +1,8 @@
+A:link, A:visited, A:active, A:hover { 
+	text-decoration: none; 
+	cursor:pointer;
+	color:black;
+	}
 #log{
     width:130px; 
     height:35px; 

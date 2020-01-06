@@ -8,54 +8,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="homework.css">
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
-    <title>test.jsp</title>
+    <title>test1.jsp</title>
 <script type="text/javascript">
-	function check_box_all(){
-		a = frm.chk1;
-		console.log(a);
-		chk_cnt = 0;
-		chk_b = '';
-		for(i=0; i<chk_a.length; i++){
-			chk_b = document.getElementsByName(a)[i].checked;
-			if(chk_b != true){
-				chk_cnt++;
-			}else{
-				continue;
-			}
+
+function check_box_all(){
+	chk_cnt = 0;
+	for(i=0; i<frm.chk.length; i++){
+		if(frm.chk[i].checked != true){
+			chk_cnt++;
 		}
-		if(chk_b != 0){
-			if(confirm("풀지 않은 문제가" + chk_cnt + "문항이 있습니다. 제출할까요?"));
-			return true;
-		}else{
-			return false;
-		}
-		
 	}
-	
-	
+	chk_cnt = Math.floor((chk_cnt/4)/2);
+	if(chk_cnt != 0){
+		if(confirm("풀지않은 문항이 " + chk_cnt +"문항이 있습니다. 제출하시겠습니까?")){
+			return true;	
+		}else{
+			return false;	
+		}			
+	}
+}
 	function check_right(check){  
-     for(i=0; i < 4; i++){
-    	
-    	 chk = document.getElementsByName(check)[i].checked;
-    	 
+     for(i=0; i < 4; i++){    	
+    	 chk = document.getElementById(check).checked;
+    	 chk_r = check.substr(0,3) + "_" + check.substr(3,5);
     	 if(chk == true){
-    		 document.getElementsByName(check + "1")[i].checked = true;
+    		 document.getElementById(chk_r).checked = true;
     	 }else{
-    		 document.getElementsByName(check + "1")[i].checked = false;    
+    		 document.getElementById(chk_r).checked = false;    
     	 }    		 
      }  
 }  
   
 	function check_left(check){  
-	     for(i=0; i < 4; i++){
-	    	
-	    	 chk = document.getElementsByName(check)[i].checked;
-	    	 
-	    	 if(chk == true){
-	    		 chk_l = check.substr(0,4);	    		 
-	    		 document.getElementsByName(chk_l)[i].checked = true;
+	     for(i=0; i < 4; i++){	    	
+	    	 chk = document.getElementById(check).checked;
+	    	 chk_l = check.substr(0,3) + check.substr(4,6);
+	    	 console.log(chk_l);
+	    	 if(chk == true){	    		 	    		 
+	    		 document.getElementById(chk_l).checked = true;
 	    	 }else{
-	    		 document.getElementsByName(chk_l)[i].checked = false;
+	    		 document.getElementById(chk_l).checked = false;
 	    	 }    		 
 	     }  
 	}  
@@ -126,13 +118,13 @@
                 </tr>
                 <tr align="left">
                     <td>
-                        <input type="checkbox" id="chk1_1" name="chk1" value="1" onclick="check_right('chk1')">
+                        <input type="checkbox" id="chk1_1" name="chk" value="1" onclick="check_right('chk1_1')">
                         <label for="chk1_1"><span></span><font style="cursor:pointer">1</font></label><br>                   
-                        <input type="checkbox" id="chk1_2" name="chk1" value="2" onclick="check_right('chk1')">
+                        <input type="checkbox" id="chk1_2" name="chk" value="2" onclick="check_right('chk1_2')">
                         <label for="chk1_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                        <input type="checkbox" id="chk1_3" name="chk1" value="3" onclick="check_right('chk1')">
+                        <input type="checkbox" id="chk1_3" name="chk" value="3" onclick="check_right('chk1_3')">
                         <label for="chk1_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                        <input type="checkbox" id="chk1_4" name="chk1" value="4" onclick="check_right('chk1')">
+                        <input type="checkbox" id="chk1_4" name="chk" value="4" onclick="check_right('chk1_4')">
                         <label for="chk1_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
@@ -144,13 +136,13 @@
                 </tr>
                 <tr align="left">
                     <td>
-                            <input type="checkbox" id="chk2_1" name="chk2" value="1" onclick="check_right('chk2')">
+                            <input type="checkbox" id="chk2_1" name="chk" value="1" onclick="check_right('chk2')">
                             <label for="chk2_1"><span></span><font style="cursor:pointer">1</font></label><br>
-                            <input type="checkbox" id="chk2_2" name="chk2" value="2" onclick="check_right('chk2')">
+                            <input type="checkbox" id="chk2_2" name="chk" value="2" onclick="check_right('chk2')">
                             <label for="chk2_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                            <input type="checkbox" id="chk2_3" name="chk2" value="3" onclick="check_right('chk2')">
+                            <input type="checkbox" id="chk2_3" name="chk" value="3" onclick="check_right('chk2')">
                             <label for="chk2_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                            <input type="checkbox" id="chk2_4" name="chk2" value="4" onclick="check_right('chk2')">
+                            <input type="checkbox" id="chk2_4" name="chk" value="4" onclick="check_right('chk2')">
                             <label for="chk2_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
@@ -162,13 +154,13 @@
                 </tr>
                 <tr align="left">
                     <td>
-                            <input type="checkbox" value="1" id="chk3_1" name="chk3" onclick="check_right('chk3')">
+                            <input type="checkbox" value="1" id="chk3_1" name="chk" onclick="check_right('chk3')">
                             <label for="chk3_1"><span></span><font style="cursor:pointer">1</font></label><br>
-                            <input type="checkbox" value="2" id="chk3_2" name="chk3" onclick="check_right('chk3')">
+                            <input type="checkbox" value="2" id="chk3_2" name="chk" onclick="check_right('chk3')">
                             <label for="chk3_2"><span></span><font style="cursor:pointer">2</font></label><br>
-                            <input type="checkbox" value="3" id="chk3_3" name="chk3" onclick="check_right('chk3')">
+                            <input type="checkbox" value="3" id="chk3_3" name="chk" onclick="check_right('chk3')">
                             <label for="chk3_3"><span></span><font style="cursor:pointer">3</font></label><br>
-                            <input type="checkbox" value="4" id="chk3_4" name="chk3" onclick="check_right('chk3')">
+                            <input type="checkbox" value="4" id="chk3_4" name="chk" onclick="check_right('chk3')">
                             <label for="chk3_4"><span></span><font style="cursor:pointer">4</font></label><br>
                     </td>
                 </tr>
@@ -180,33 +172,33 @@
                 <tr>
                     <td style="vertical-align: top;">
 					<a href="#td1">1.</a>
-                    &nbsp;<input type="checkbox" id="chk_1_1" name="chk11" value="1" onclick="check_left('chk11')">
+                    &nbsp;<input type="checkbox" id="chk_1_1" name="chk" value="1" onclick="check_left('chk_1_1')">
                              <label for="chk_1_1"><span></span><font style="cursor:pointer">1</font></label>
-                             <input type="checkbox" id="chk_1_2" name="chk11" value="2" onclick="check_left('chk11')">
+                             <input type="checkbox" id="chk_1_2" name="chk" value="2" onclick="check_left('chk_1_2')">
                              <label for="chk_1_2"><span></span><font style="cursor:pointer">2</font></label>
-                             <input type="checkbox" id="chk_1_3" name="chk11" value="3" onclick="check_left('chk11')">
+                             <input type="checkbox" id="chk_1_3" name="chk" value="3" onclick="check_left('chk_1_3')">
                              <label for="chk_1_3"><span></span><font style="cursor:pointer">3</font></label>
-                             <input type="checkbox" id="chk_1_4" name="chk11" value="4" onclick="check_left('chk11')">
+                             <input type="checkbox" id="chk_1_4" name="chk" value="4" onclick="check_left('chk_1_4')">
                              <label for="chk_1_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
                    <a href="#td2">2.</a> 
-                   	  &nbsp;<input type="checkbox" id="chk_2_1" name="chk21" value="1" onclick="check_left('chk21')">
+                   	  &nbsp;<input type="checkbox" id="chk_2_1" name="chk" value="1" onclick="check_left('chk21')">
                             <label for="chk_2_1"><span></span><font style="cursor:pointer">1</font></label>
-                            <input type="checkbox" id="chk_2_2" name="chk21" value="2" onclick="check_left('chk21')">
+                            <input type="checkbox" id="chk_2_2" name="chk" value="2" onclick="check_left('chk21')">
                             <label for="chk_2_2"><span></span><font style="cursor:pointer">2</font></label>
-                            <input type="checkbox" id="chk_2_3" name="chk21" value="3" onclick="check_left('chk21')">
+                            <input type="checkbox" id="chk_2_3" name="chk" value="3" onclick="check_left('chk21')">
                             <label for="chk_2_3"><span></span><font style="cursor:pointer">3</font></label>
-                            <input type="checkbox" id="chk_2_4" name="chk21" value="4" onclick="check_left('chk21')">
+                            <input type="checkbox" id="chk_2_4" name="chk" value="4" onclick="check_left('chk21')">
                             <label for="chk_2_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
                    <a href="#td3">3.</a>
-                   	  &nbsp;<input type="checkbox" value="1" id="chk_3_1" name="chk31" onclick="check_left('chk31')">
+                   	  &nbsp;<input type="checkbox" value="1" id="chk_3_1" name="chk" onclick="check_left('chk31')">
                             <label for="chk_3_1"><span></span><font style="cursor:pointer">1</font></label>
-                            <input type="checkbox" value="2" id="chk_3_2" name="chk31" onclick="check_left('chk31')">
+                            <input type="checkbox" value="2" id="chk_3_2" name="chk" onclick="check_left('chk31')">
                             <label for="chk_3_2"><span></span><font style="cursor:pointer">2</font></label>
-                            <input type="checkbox" value="3" id="chk_3_3" name="chk31" onclick="check_left('chk31')">
+                            <input type="checkbox" value="3" id="chk_3_3" name="chk" onclick="check_left('chk31')">
                             <label for="chk_3_3"><span></span><font style="cursor:pointer">3</font></label>
-                            <input type="checkbox" value="4" id="chk_3_4" name="chk31" onclick="check_left('chk31')">
+                            <input type="checkbox" value="4" id="chk_3_4" name="chk" onclick="check_left('chk31')">
                             <label for="chk_3_4"><span></span><font style="cursor:pointer">4</font></label>
                             <br>
                    <a href="#td4">4.</a> 
@@ -284,7 +276,7 @@
             </table>
         </div>
         <div style="position:absolute; top:860px; left:76px; width:180px; height:420px;">
-            <input type="submit" value="제출하기" id="apply" onclick="location.href='result.html'"> 
+            <input type="submit" value="제출하기" id="apply"> 
     </div> 
     </form>
 </body>
