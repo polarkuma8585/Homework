@@ -10,43 +10,41 @@
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
     <title>test1.jsp</title>
 <script type="text/javascript">
+
+/* tag id 로 접근해 시험문제 유효성 검사  
+ * form tag의 onsubmit 속성으로 호출
+ */
 function check_box_all2(){
+	test = 3;
 	chk2_cnt = 0;
-	for(i=0; i<=frm.chk.length/2; i++){
-		for(j=0; j <5; j++){
-			if(document.getElmentById("chk"+ i + "_" + j).checked == true){
+	result = 0;
+	cnt = 0;
+	for(i=1; i <= test; i++){
+		chk2_cnt = 0;
+		for(j=1; j < 5; j++){
+			box = "chk" + i + "_" + j; 
+			if(document.getElementById(box).checked == true){
 				chk2_cnt++;
 			}
 		}
+		if(chk2_cnt != 0){
+			cnt++;
+		}
 	}
-	if(chk2_cnt != Math.floor(frm.chk.length/2)){
-		if(confirm("풀지않은 문항이 " + Math.floor(frm.chk.length/4) - chk_cnt +"문항이 있습니다. 제출하시겠습니까?")){
+	result = test - cnt;
+	if(result != 0){
+		if(confirm("풀지않은 문항이 " + result +"문항이 있습니다. 제출하시겠습니까?")){
 			return true;	
 		}else{
 			return false;	
 		}
 	}
 }
-/* function check_box_all(){
-	chk_cnt = 0;
-	for(i=0; i<frm.chk.length; i++){
-		if(frm.chk[i].checked != true){
-			chk_cnt++;				
-			}
-		}
-	
-	chk_cnt = Math.floor((chk_cnt/4)/2);
-	console.log(chk_cnt);
-	if(chk_cnt != 0){
-		if(confirm("풀지않은 문항이 " + chk_cnt +"문항이 있습니다. 제출하시겠습니까?")){
-			return true;	
-		}else{
-			return false;	
-		}			
-	}
-}
+
+/* tag name 으로 checkbox 유효성 검사
+ * form tag의 onsubmit 속성으로 호출
  */
-function check_box_all3(){
+function check_box_all(){
 
 	chk_cnt = 0;
 	a = 0;
@@ -65,7 +63,6 @@ function check_box_all3(){
 		}
 		
 	}
-	
 	chk_cnt = Math.floor((chk_cnt/4)/2);
 	console.log(chk_cnt);
 	if(chk_cnt != 0){
@@ -81,7 +78,7 @@ function check_box_all3(){
      for(i=0; i < 4; i++){    	
     	 chk = document.getElementById(check).checked;
     	 chk_r = check.substr(0,3) + "_" + check.substr(3,5);
-    	 console.log("check right: "+ chk_r);
+    	 
     	 if(chk == true){
     		 document.getElementById(chk_r).checked = true;
     	 }else{
@@ -94,7 +91,7 @@ function check_box_all3(){
 	     for(i=0; i < 4; i++){	    	
 	    	 chk = document.getElementById(check).checked;
 	    	 chk_l = check.substr(0,3) + check.substr(4,6);
-	    	 console.log("check left: "+ chk_l);
+	    	 
 	    	 if(chk == true){	    		 	    		 
 	    		 document.getElementById(chk_l).checked = true;
 	    	 }else{
@@ -102,12 +99,9 @@ function check_box_all3(){
 	    	 }    		 
 	     }  
 	}  
-/* 	  function check_all_box(check){
-		  for(i=0; i < check.length; i++){
-			  chk_a = document.getElementsByName()[i].checked;
-		}
-	}*/
- 	var SetTime = 3600;		// 최초 설정 시간(기본 : 초)
+
+ 	
+	var SetTime = 3600;		// 최초 설정 시간(기본 : 초)
 
 	function msg_time() {	// 1초씩 카운트
 		m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";	// 남은 시간 계산
@@ -130,7 +124,7 @@ function check_box_all3(){
 </script>
 </head>
 <body>
- 	<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return check_box_all3()">
+ 	<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return check_box_all2()">
         <div style="position:relative; width:1200px; height:867px; margin:0 auto; font-family: 'Nanum Gothic', sans-serif;">
             <div style="position:absolute; top:63px; left:76px; width:300px; height:36px; font-weight:bold; font-size: 25px;">
                         시험응시
