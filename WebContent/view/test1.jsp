@@ -4,9 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="homework.css">
+    <link rel="stylesheet" href="css/homework.css">
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
     <title>test1.jsp</title>
 <script type="text/javascript">
@@ -124,7 +122,7 @@ function check_box_all(){
 </script>
 </head>
 <body>
- 	<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return check_box_all2()">
+ 	<form id="frm" name="frm" action="testlist.do" method="post" onsubmit="return check_box_all2()">
         <div style="position:relative; width:1200px; height:867px; margin:0 auto; font-family: 'Nanum Gothic', sans-serif;">
             <div style="position:absolute; top:63px; left:76px; width:300px; height:36px; font-weight:bold; font-size: 25px;">
                         시험응시

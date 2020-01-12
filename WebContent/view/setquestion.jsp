@@ -4,9 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="homework.css">
+<link rel="stylesheet" href="css/homework.css">
 <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
 	rel="stylesheet">
 <title>setquestion.jsp</title>
@@ -131,7 +129,7 @@
 		</table>
 		<div style="position: absolute; top: 700px; left: 500px;">
 			<input type="submit" value="등록" id="regbtn">&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" value="목록" onclick="location.href='testlist.html'" id="listbtn2">
+			<input type="button" value="목록" onclick="location.href='testlist.do'" id="listbtn2">
 		</div>
 		</form>
 	</div>

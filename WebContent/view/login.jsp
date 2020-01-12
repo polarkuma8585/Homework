@@ -1,18 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="homework.css">
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="css/homework.css">
     <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
-
-    <title>Login,html</title>
+    <title>Login.html</title>
     
 </head>
 <body>    
     <div style="position:relative; width:1200px; height:867px; margin:0 auto; font-family: 'Nanum Gothic', sans-serif;">
-        <form>
+        <form id="frm" name="frm" action="testlist.do" method="post">
             <div align="center" id="log" style="position: absolute; top:190px; left:360px; ">EMAIL</div>
             <div align="center" id="log" style="position: absolute; top:250px; left:360px; ">PASSWORD</div>
             <div style="position:absolute; top:180px; left:350px; width:500px; height:36px;">  
@@ -25,7 +24,7 @@
                 </tr>
             </table>
             </div>
-            <button id="btn" type="button" onclick="location.href='testlist.html'">로그인</button>
+            <button id="btn" type="submit">로그인</button>            
         </form>
     </div>
 </body>

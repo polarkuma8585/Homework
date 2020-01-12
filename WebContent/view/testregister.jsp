@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="homework.css">
-<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css"
-	rel="stylesheet">
+<link rel="stylesheet" href="css/homework.css">
+
+<link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+<script type="text/javascript" src="js/myJs.js"></script>
 <title>testregister.jsp</title>
-<script type="text/javascript">
+
+	<script type="text/javascript">
         function formCheck(){
             if(frm.testname.value == ""){
                 alert("시험명을 입력해주세요.")
@@ -55,7 +55,7 @@
 </head>
 <body>
 	<div style="position: relative; width: 1200px; height: 867px; margin: 0 auto; font-family: 'Nanum Gothic', sans-serif;">
-		<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return formCheck()">
+		<form id="frm" name="frm" action="insertExamOk.do" method="post" onsubmit="return formCheck()">
 			<div style="position: absolute; top: 55px; left: 76px; width: 300px; height: 36px; font-weight: bold; font-size: 25px;">
 				시험지 등록
 			</div>
@@ -63,8 +63,7 @@
 				<tr>
 					<th>시험명</th>
 					<td colspan="3">
-					<input type="text" placeholder="신입사원 레벨 테스트" id="testname" name="testname"
-						style="border-radius: 5px; height: 30px; width: 670px; padding: 0 0 0 5px; border: 1px #cccccc solid">
+					<input type="text" placeholder="신입사원 레벨 테스트" id="testname" name="testname" style="border-radius: 5px; height: 30px; width: 670px; padding: 0 0 0 5px; border: 1px #cccccc solid">
 					</td>
 				</tr>
 				<tr>
@@ -75,8 +74,7 @@
 					</td>
 					<th>시험시간</th>
 					<td>
-					<input type="text" placeholder="1시간" id="testtime" name="testtime"
-						style="border-radius: 5px; height: 30px; width: 150px; padding: 0 0 0 5px; border: 1px #cccccc solid">
+					<input type="text" placeholder="1시간" id="testtime" name="testtime" style="border-radius: 5px; height: 30px; width: 150px; padding: 0 0 0 5px; border: 1px #cccccc solid">
 					</td>
 				</tr>
 				<tr>
@@ -105,7 +103,7 @@
 			</table>
 			<div style="position: absolute; top: 530px; left: 500px;">
 				<input type="submit" value="등록" id="regbtn">&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" value="목록" id="listbtn2" onclick="location.href='testlist.html'">
+				<input type="button" value="목록" id="listbtn2" onclick="location.href='testlist.do'">
 			</div>
 		</form>
 	</div>

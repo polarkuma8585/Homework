@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<script type="text/javascript">
+ 	<script type="text/javascript">
 		document.location = "index.do";
-	</script>
+ 	</script> -->
+<%-- 	<jsp:forward page="index.do"></jsp:forward> --%>
 </body>
 </html>
