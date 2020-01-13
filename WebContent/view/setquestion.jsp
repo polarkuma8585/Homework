@@ -47,13 +47,17 @@
 		}
 		var checked_items = 0;
         for (i=0; i<frm.elements.length; i++) {
-        if ((frm.elements[i].name == "answer") &&
-        (frm.elements[i].checked))
+        if ((frm.elements[i].name == "answer") && (frm.elements[i].checked))
         checked_items++;
         }
         if (checked_items == 0)
         {
         alert("정답을 선택해 주세요.")
+        return false;
+        }
+        if (checked_items > 1)
+        {
+        alert("정답은 하나만 선택해 주세요.")
         return false;
         }
 		alert("문제 등록이 완료되었습니다.")
@@ -63,7 +67,7 @@
 </head>
 <body>
 	<div style="position: relative; width: 1200px; height: 867px; margin: 0 auto; font-family: 'Nanum Gothic', sans-serif;">
-	<form id="frm" name="frm" action="testlist.html" method="post" onsubmit="return questFormCheck()">
+	<form id="frm" name="frm" action="setQuestionOk.do" method="post" onsubmit="return questFormCheck()">
 		<div style="position: absolute; top: 55px; left: 76px; width: 300px; height: 36px; font-weight: bold; font-size: 25px;">
 			문제 등록</div>
 		<table cellpadding="5px" style="position: absolute; top: 115px; left: 76px; width: 1000px; height: 100px;">
@@ -116,13 +120,13 @@
 			</tr>
 			<tr>
 				<td>정답</td>
-				<td><input id="chk1" type="checkbox" name="answer">
+				<td><input id="chk1" type="checkbox" name="answer" value="1">
 					<label for="chk1"><span></span>1</label>&nbsp;&nbsp; 
-					<input id="chk2" type="checkbox" name="answer"> 
+					<input id="chk2" type="checkbox" name="answer" value="2"> 
 					<label for="chk2"><span></span>2</label>&nbsp;&nbsp; 
-					<input id="chk3" type="checkbox" name="answer"> 
+					<input id="chk3" type="checkbox" name="answer" value="3"> 
 					<label for="chk3"><span></span>3</label>&nbsp;&nbsp;
-					<input id="chk4" type="checkbox" name="answer"> 
+					<input id="chk4" type="checkbox" name="answer" value="4"> 
 					<label for="chk4"><span></span>4</label>
 				</td>
 			</tr>

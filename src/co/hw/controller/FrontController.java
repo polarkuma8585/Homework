@@ -14,6 +14,7 @@ import co.hw.command.IndexCommand;
 import co.hw.command.InsertExamOkCommand;
 import co.hw.command.ResultCommand;
 import co.hw.command.SetQuestionCommand;
+import co.hw.command.SetQuestionOkCommand;
 import co.hw.command.TestCommand;
 import co.hw.command.TestListCommand;
 import co.hw.command.TestRegisterCommand;
@@ -36,6 +37,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/test.do", new TestCommand());
 		cont.put("/result.do", new ResultCommand());
 		cont.put("/insertExamOk.do", new InsertExamOkCommand());
+		cont.put("/setQuestionOk.do", new SetQuestionOkCommand());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

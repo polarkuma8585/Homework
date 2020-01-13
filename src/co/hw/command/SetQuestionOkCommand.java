@@ -9,33 +9,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.hw.common.Command;
 import co.hw.dao.ExamDao;
-import co.hw.dto.ExamDto;
+import co.hw.dto.QuestDto;
 
-public class InsertExamOkCommand implements Command {
+public class SetQuestionOkCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ExamDto dto = new ExamDto();
+		QuestDto dto = new QuestDto();
 		ExamDao dao = new ExamDao();
 		int n = 0;
 		
-		dto.seteName(request.getParameter("testname"));
-		dto.seteCnt(Integer.parseInt(request.getParameter("testcnt")));
-		dto.seteTime(Integer.parseInt(request.getParameter("testtime")));
-		dto.seteType(request.getParameter("testtype"));
-		dto.seteDesc(request.getParameter("content"));
-		dto.seteGroup(request.getParameter("ttype"));
+		dto.setqType(request.getParameter("qtype"));
+		dto.setqContent(request.getParameter("qcontent"));
+		dto.setqAns1(request.getParameter("e1"));
+		dto.setqAns2(request.getParameter("e2"));
+		dto.setqAns3(request.getParameter("e3"));
+		dto.setqAns4(request.getParameter("e4"));
+		dto.setqExplain(request.getParameter("qexplain"));
+		dto.setqRans(request.getParameter("answer"));
 		
-		n = dao.eInsert(dto);
+		n = dao.qInsert(dto);
 		
-		String path ="/testlist.do";
+		String path = "/testlist.do";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
-		
-		
-//		System.out.println(request.getParameter("ttype"));
-		
-		
 		
 	}
 
