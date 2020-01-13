@@ -23,6 +23,8 @@ public class InsertExamOkCommand implements Command {
 		dto.seteGroup(request.getParameter("ttype"));
 		
 		
+		
+		
 		System.out.println(request.getParameter("ttype"));
 		
 //		dao.eInsert(dto);  dao 만들 것.
