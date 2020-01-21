@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.hw.common.Command;
-import co.hw.dao.ExamDao;
+import co.hw.dao.QuestDao;
 import co.hw.dto.QuestDto;
 
 public class SetQuestionOkCommand implements Command {
@@ -16,7 +16,7 @@ public class SetQuestionOkCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		QuestDto dto = new QuestDto();
-		ExamDao dao = new ExamDao();
+		QuestDao dao = new QuestDao();
 		int n = 0;
 		
 		dto.setqType(request.getParameter("qtype"));
