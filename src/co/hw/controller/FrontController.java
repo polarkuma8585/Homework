@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.hw.command.ExamCommandCreate;
+import co.hw.command.ExamCommandCreateForm;
 import co.hw.command.IndexCommand;
 import co.hw.command.InsertExamOkCommand;
+import co.hw.command.QuestCommandCreate;
+import co.hw.command.QuestCommandCreateForm;
 import co.hw.command.ResultCommand;
-import co.hw.command.SetQuestionCommand;
-import co.hw.command.SetQuestionOkCommand;
 import co.hw.command.TestCommand;
 import co.hw.command.TestListCommand;
-import co.hw.command.TestRegisterCommand;
 import co.hw.common.Command;
 
 @WebServlet("/FrontController")
@@ -30,14 +31,21 @@ public class FrontController extends HttpServlet {
     }
 
 	public void init(ServletConfig config) throws ServletException {
-		cont.put("/index.do", new IndexCommand());
-		cont.put("/testlist.do", new TestListCommand());
-		cont.put("/setquestion.do", new SetQuestionCommand());
-		cont.put("/testregister.do", new TestRegisterCommand());
-		cont.put("/test.do", new TestCommand());
-		cont.put("/result.do", new ResultCommand());
-		cont.put("/insertExamOk.do", new InsertExamOkCommand());
-		cont.put("/setQuestionOk.do", new SetQuestionOkCommand());
+		cont.put("/index.do", new IndexCommand()); 
+		cont.put("/testlist.do", new TestListCommand()); // 목록
+		//cont.put("/setquestion.do", new SetQuestionCommand()); // 문제등록 (이전)
+		//cont.put("/setQuestionOk.do", new SetQuestionOkCommand()); // 문제등록 확인(이전 )
+		
+		cont.put("/setquestion.do", new QuestCommandCreateForm()); // 문제등록 (수정)
+		cont.put("/setquestionOk.do", new QuestCommandCreate()); // 문제등록 (수정)
+		
+		//cont.put("/testregister.do", new TestRegisterCommand()); // 시험등록 (이전)
+		//cont.put("/insertExamOk.do", new InsertExamOkCommand()); // 시험등록 확인 (이전)
+		
+		cont.put("/testregister.do", new ExamCommandCreateForm()); // 문제등록 (수정)
+		cont.put("/insertExamOk.do", new ExamCommandCreate()); // 문제등록 (수정)
+		cont.put("/test.do", new TestCommand()); // 시험 화면
+		cont.put("/result.do", new ResultCommand()); // 시험 결과
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
