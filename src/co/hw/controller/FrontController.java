@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.hw.command.ExamCommandCreate;
 import co.hw.command.ExamCommandCreateForm;
+import co.hw.command.ExamCommandDelete;
+import co.hw.command.ExamCommandModify;
+import co.hw.command.ExamCommandModifyOk;
 import co.hw.command.IndexCommand;
-import co.hw.command.InsertExamOkCommand;
 import co.hw.command.QuestCommandCreate;
 import co.hw.command.QuestCommandCreateForm;
 import co.hw.command.ResultCommand;
@@ -44,6 +46,11 @@ public class FrontController extends HttpServlet {
 		
 		cont.put("/testregister.do", new ExamCommandCreateForm()); // 문제등록 (수정)
 		cont.put("/insertExamOk.do", new ExamCommandCreate()); // 문제등록 (수정)
+		
+		cont.put("/examModify.do", new ExamCommandModify()); // 시험수정 
+		cont.put("/examModifyOk.do", new ExamCommandModifyOk()); // 시험수정 완료		
+		cont.put("/examDelete.do", new ExamCommandDelete()); // 시험삭제 
+		
 		cont.put("/test.do", new TestCommand()); // 시험 화면
 		cont.put("/result.do", new ResultCommand()); // 시험 결과
 	}

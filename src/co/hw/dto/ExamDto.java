@@ -53,6 +53,11 @@ public class ExamDto {
 	public void seteType(String eType) {
 		this.eType = eType;
 	}
+	@Override
+	public String toString() {
+		return "ExamDto [eNo=" + eNo + ", eName=" + eName + ", eCnt=" + eCnt + ", eTime=" + eTime + ", eGroup=" + eGroup
+				+ ", eDesc=" + eDesc + ", eType=" + eType + "]";
+	}
 
 	
 	}

@@ -135,7 +135,41 @@ A:link, A:visited, A:active, A:hover {
 #testbtn:hover{
     background-color: #242424;
     height:40px;
-    width: 90px;
+/*     width: 90px; */
+    transition: .5s;   
+}
+#testbtn1 {
+    height:30px; 
+    width:80px; 
+    border-radius: 5px; 
+    border-style: none; 
+    background-color:#1fce67; 
+    color:white; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#testbtn1:hover{
+    background-color: #0baa4c;
+    height:40px;
+/*     width: 90px; */
+    transition: .5s;
+}
+#testbtn2 {
+    height:30px; 
+    width:80px; 
+    border-radius: 5px; 
+    border-style: none; 
+    background-color:#f92222; 
+    color:white; 
+    cursor:pointer;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+#testbtn2:hover{
+    background-color: #c31a1a;
+    height:40px;
+/*     width: 90px; */
     transition: .5s;
 }
 #result {

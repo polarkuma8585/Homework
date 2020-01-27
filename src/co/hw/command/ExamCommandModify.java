@@ -1,7 +1,6 @@
 package co.hw.command;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,19 +11,18 @@ import co.hw.common.Command;
 import co.hw.dao.ExamDao;
 import co.hw.dto.ExamDto;
 
-public class TestListCommand implements Command {
+public class ExamCommandModify implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ExamDto dto = new ExamDto();
 		ExamDao dao = new ExamDao();
-		ExamDto dto  = new ExamDto();
-		ArrayList<ExamDto> list = new ArrayList<ExamDto>();
 		
-		list = dao.selectAll();
+		int examNo = Integer.parseInt(request.getParameter("eNo"));
+		dto = dao.selectOne(examNo);		
+		request.setAttribute("dto", dto);
 		
-		request.setAttribute("list", list);
-		
-		String path = "view/examList.jsp";
+		String path ="view/examModify.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
